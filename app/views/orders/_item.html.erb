@@ -1,15 +1,15 @@
 <tr>
 
   <td>
-    <p> <%= product.name %> <p>
+    <p><%= product.name %></p>
   </td>
 
   <td>
-    <p> <%= quantity %> <p>
+    <p><%= quantity %></p>
   </td>
 
   <td>
-    <p> <%= (humanized_money_with_symbol product.price * quantity) %> <p>
+    <p><%= humanized_money_with_symbol(product.price * quantity) %></p>
   </td>
-
+  
 </tr>

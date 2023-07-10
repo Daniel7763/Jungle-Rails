@@ -10,15 +10,15 @@
 
       <thead>
         <tr>
-          <td colspan="2">Product</td>
+          <th>Product</td>
           <th>Quantity</th>
-          <th>Price</th>
+          <th>Total Price</th>
         </tr>
       </thead>
 
       <tbody>
         <% @order.line_items.each do |item| %>
-          <%= render 'item', product: item.product, quantity: item.quantity, price: item.price %>
+          <%= render 'item', product: item.product, quantity: item.quantity %>
         <% end %>
       </tbody>
 
