@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
+  get 'users/new'
+  get 'users/create'
+  get '/login', to: 'sessions#new'
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
@@ -19,6 +25,12 @@ Rails.application.routes.draw do
   end
 
   get '/about', to: 'about#about', as: 'about'
+
+  resources :users, only: [:new, :create]
+
+  resources :sessions, only: [:new, :create, :destroy]
+    # Add the delete route for sessions
+    delete '/sessions', to: 'sessions#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
